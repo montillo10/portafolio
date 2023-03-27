@@ -1,0 +1,1392 @@
+:root {
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #ffc108;
+    --secundario: #0097A7;
+    --gris: #757575;
+    --gris-claro: #dfe9f3
+
+    --fuente-principal: 3.8rem;
+}
+
+/*Globales **/
+html {
+    font-size: 62.5%;
+    box-sizing: border-box; /*Hack para Box Model*/
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+/** Scroll Snap **/
+
+.navegacion-principal,
+.sobre-mi,
+.servicios,
+.formulario {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
+*, *:before, *:after {      
+    box-sizing: inherit;
+}
+
+
+body {
+    font-size: 16px; /* 1rem = 10px */
+    font-family: 'Lora', serif;
+    background-image: linear-gradient(to top, var(--gris-claro) 0%, var(--blanco) 100%);
+}
+
+
+/** Contenedor de mis servicios **/
+@media (min-width: 480px ) {
+    .contenedor {
+        max-width: 120rem;
+    }
+}
+
+@media (min-width:1440px ) {  /* Para pantallas mas grandes */
+    .contenedor {
+        max-width: 200rem;
+    }
+}
+/* --------------------------- */
+
+.boton {
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 1.5rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    width: 60%;
+    text-align: center;
+    border:none;
+}
+
+@media (min-width:768px ) {
+    .boton {
+    width: auto;
+    }
+}
+
+.boton:hover {
+    cursor: pointer;
+}
+
+.sombra {
+    -webkit-box-shadow: 0px 5px 300px 0px rgba(189,183,189,0.46);
+    -moz-box-shadow: 0px 5px 300px 0px rgba(189,183,189,0.46);
+    box-shadow: 0px 5px 300px 0px rgba(189,183,189,0.46);
+}
+
+/* Tipografia */
+h1 {
+   font-size: 3.8rem; 
+}
+
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h1,h2,h3 {
+    text-align: center;
+}
+
+p{
+    text-align: center;
+}
+
+
+
+/* titulo */
+.titulo span {
+    font-size: 2rem;
+}
+
+/** ---------- Utilidades --------**/
+
+.width-sm-100{
+    width: 100%;
+}
+@media (min-width: 768px) {
+    .width-sm-100{
+        width: auto;
+    }
+}
+
+.alinear-derecha{
+    justify-content: flex-end;
+}
+
+.flex{
+    display: flex;
+}
+
+.margin-top-3rem{
+    margin-top: 3rem;
+}
+
+.alinear-centro{
+    text-align: center;
+}
+
+
+
+/**-----------------------------------
+
+/* Navegacion Principal */
+.nav-bg {
+    background-color: var(--secundario);
+}
+
+.navegacion-principal {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+.contenedor-sobre-mi{
+    height: 15rem;
+    width: 28rem;
+}
+
+@media (min-width: 480px) {
+    .contenedor-sobre-mi{
+        height: 15rem;
+        width: 50rem;
+    }
+}
+
+@media (max-width: 480px) { /* Celular */
+    .navegacion-principal {
+        flex-direction: column;
+        align-content: center;
+    }
+}
+
+@media (min-width: 768px) { /* Tablet */
+    .navegacion-principal {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 1140px) { /* Laptop Promedio */
+
+}
+
+@media (min-width: 1440px) { /* "Más grande" Pantallas Retina */
+
+}
+
+
+.navegacion-principal a {
+    color: var(--blanco);
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 1rem;
+
+    display: block;
+    text-align: center;
+}
+
+.navegacion-principal a:hover {
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+
+.navegacion-principal a:focus {
+    background-color: black;
+    color: red;
+}
+
+/* Hero */
+.hero {
+    background-image: url(../img/fondo-programador.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 800px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.contenido-hero{
+    position: absolute;
+    background-color: RGBA(0, 0, 0, 0.82);
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-hero h2,
+.contenido-hero p {
+    color: var(--blanco);
+}
+
+.contenido-hero .ubicacion{
+    display: flex;
+    align-items: flex-end;
+}
+
+@media (min-width: 760px) {
+    .servicios{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 5rem;
+    }
+}
+
+@media (min-width: 1440px) {
+    .servicios{
+
+    }
+}
+
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicio h3 {
+    color: var(--secundario);
+    font-weight: normal;
+}
+
+.servicio p{
+    line-height: 2;
+}
+
+.servicio .iconos {
+    height: 15rem;
+    width: 15rem;
+    background-color:#edf9ff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/** Contacto (Formulario) **/
+
+.formulario {
+    background-color: var(--gris);
+    width: min(60rem, 100%); /** Utiliza el valor más pequeño**/
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.formulario fieldset {
+ border: none;
+}
+
+.formulario legend {
+    color: var(--primario);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .contenedor-campos-form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto 20rem;
+        column-gap: 1rem;
+    }
+
+    .campo-form:nth-child(3),
+    .campo-form:nth-child(4) {
+        grid-column: 1 / 3; /*El elemento 3 (correo) y 4 (mensaje) abarcaran el tamaño de la
+                                columna 1 a la 3 */   
+
+    }
+
+}
+
+
+.campo-form {
+    margin-bottom: 1rem;
+}
+
+.campo-form label{
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+.campo-form textarea {
+    height: 18rem;
+}
+
+.input-text {
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+}
+
+/** Footer **/
+.footer {
+    text-align: center;
+}
+
+
+/** Selector de elemento
+
+-Seleccionara un elemento en base a su etiqueta (ver ejemplo)
+
+p{
+    color: red;
+}
+
+/** Selector de clase
+
+-se puede crear múltiples veces (es reutilizable).Inicia con un punto (ver ejemplo)
+
+.cliente{
+    color: red;
+}
+
+/** Selector de ID
+
+-Puedes tener multiples ID's por pagina, pero sus nombres no pueden repetirse (son unicos)
+(ver ejemplo)
+
+#cliente{
+    color: red;
+}
+
+/** Selector de atributo
+
+-Selecciona elementos basados en algún elemento que tenga (ver ejemplo)
+
+[src="logo.jpg"] {
+    color: red;
+}
+
+/** Combinacion de descendentes
+
+-Selecciona los elementos hijos, cuyo padre sea una clase (o ID) en específico.
+(ver ejemplo)
+
+.cliente .nombre {
+    color: red;
+}
+
+*   En el ej anterior, se aplicara el color rojo si la clase nombre es hija de 
+    la clase cliente.
+
+/** Seleccionar todos los hijos
+
+- Aplica la siguiente regla para todos los hijos de un determinado elemento, y de un
+    determinado padre (ver ejemplo)
+
+.cliente > p{
+    color: red;
+}
+
+*   en este caso, se aplica el color rojo a todos los parrafos hijos de la clase cliente
+
+/** RECORDAR: 
+
+    *{} : Selector universal (aplica a toda la pagina)
+    #titulo{} : Identificador
+    .centrar{} : Elemento
+    h1, h2, p{} : forma correcta de agrupar selectores
+    h4.right {} : subclase de CSS, solo los h4 se moveran a la derecha
+
+
+---------------------------------------------------------------------
+
+/**         Especificidad en CSS
+
+    ¿Qué valores del CSS serán tomados en cuenta por el navegador?
+
+    (Especificación > Cascada) esto es para mi.
+
+    ¿Que es especificidad?
+
+    Es como el navegador va a mostrar el CSS de acuerdo a que tan específico es el Selector
+    que hemos creado (es un grupo de reglas aplicadas a los selectores CSS para determinar
+     qué estilo se aplica a un elemento.)
+
+     Si bien CSS es en cascada, se prioriza que tan especifico es un elemento, y eso le da
+     una mayor prioridad para ser visualizado.
+
+/** Ejemplo 1:
+
+     p {
+        color: blue;
+     }
+
+     p {
+        color: red;
+    }
+
+    En el ejemplo 1, al ser ambos igual de especificos, se mostrara el color rojo, debido a 
+    que es el ultimo en aparecer. Se aplica el modelo cascada.
+
+/** Ejemplo 2:
+
+    p.parrafo {
+        color: blue;
+     }
+
+     p {
+        color: red;
+    }
+
+    en el Ejemplo 2, al ser mas especifico el primero, se mostrara de azul (siempre que
+    coincida con el selector). Se aplica la especificidad.
+
+/** Ejemplo 3:
+
+    p#parrafo { 
+        color: blue
+    }
+
+    p {
+        color: red!important;
+    }
+
+    al tener el color rojo con !important, le da la mayor de las prioridades, siendo
+    esta seleccionada. Se aplica la especificidad.
+
+/** Recordar: Si un elemento tiene un selector mas específico, no importa donde haya sido
+ ** declarado, CSS decidirá por su especificidad.
+
+ --------------------------------------------------------------------
+ 
+/**  --------- COLORES EN CSS ------------
+
+/** RGB (red, green, blue) 
+
+/** HSL: tono, saturación y luz
+    
+/** #: Hexadecimal
+
+/** RGBA (Rojo, verde, azul, aplha (1 = no hay transparencia. 0.1 = casi transparente)
+    (Esto aplica tambien al RGBA, y al HSLA). Pueden usarse %.
+
+    Ejemplos:
+    
+    .rojo{
+        background-color: crimson;
+    }
+
+    .rosa{
+        background-color: deeppink;
+    }
+
+    .rgb{
+        background-color: rgb(131,56,236);
+    }
+
+    .rgba{
+        background-color: rgba(131, 56, 236, .5);
+    }
+
+    .hexadecimal{
+        background-color: #0091ad;
+    }
+
+    .hexa_transparencia{
+        background-color: #0090ad88;
+    }
+
+    .hsl{
+        background-color: hsl(195, 100%, 50%);
+    }
+
+    .hsla{
+        background-color: rgba(0, 191, 255, 0.5);
+    }
+
+
+/**   ---------- BORDES EN CSS ------------
+
+.punteado{
+    border-style: dotted;
+    border-width: 10px 15px 20px 5px;
+  
+}
+
+.discontinuo{
+    border-style: dashed;
+    border-width: thick; 
+    /*
+    thin: delgado
+    medium: medio
+    thick: ancho
+    */
+/*
+}   
+
+.solido{
+    border: 10px solid red;
+
+}
+
+.doble{
+    border: 5px double;
+    border-color: red;
+}
+
+.surco{
+    border: 10px groove;
+    /*border-width: 10px;
+    border-style: groove;*/
+/*
+}
+
+.cresta{
+    border: 10px ridge;
+    border-width: 10px 5px 20px;
+    
+}
+
+.recuadro{
+    border: 10px inset;
+    border-color: rgb(124, 76, 13);
+}
+
+.outset{
+    border: 10px outset;
+}
+
+.sin_borde{
+    border: none;
+}
+
+.oculto{
+    border: hidden;
+}
+
+.mixto{
+    border-style: dotted solid dashed double;
+    border-color: black blue green red;
+
+}
+
+.Solido_radius{
+    border: solid red;
+    border-width: 5px;
+    border-radius: 20px 5px 10px 15px;
+}
+
+    -----------------------------
+
+/**  Pseudo selectores o Custom Properties
+    (elementos que no existen en HTML) 
+
+ /*Se puede crear una paleta de colores*/
+/*Se puede crear cualquier propiedad*/
+
+/*
+
+:root{
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #FFC107;
+    --secundario: #0097A7;
+    --gris: #757575;
+    
+    --fuente-principal: 3.8rem;
+}
+
+    -------------------------------
+    
+    https://overapi.com/css
+
+/**    Font-size = Tamaño de la letra
+    
+    font-size: smaller;
+    font-size: 250%;
+    font-size: 16px;
+
+/**    Font-family = familia de fuentes.
+
+    font-family: "Gill Sans Extrabold", Helvetica, sans-serif
+    font-family: Courier, "Lucida Console", monospace
+
+/**    font-style = estilo (aspecto) de la fuente.
+
+    font-style: normal;
+    font-style: italic;
+    font-style: oblique;
+
+    font-style: inherit; (Valores Globales)
+    font-style: initial; (Valores Globales)
+    font-style: unset; (Valores Globales)
+
+/**    font-weight = grosor de la letra (anchura)
+    
+    font-weight: normal;
+    font-weight: bolder; (Relativo al padre)
+    font-weight: 200; (valores globales)
+
+    normal = normal
+    bold = grueso/ancho
+    lighter =menos grueso
+    bolder = el mas grueso
+
+/**     line-height = espacio entre las lineas de texto.
+
+    line-height: 200; (valores globales)
+
+/** ----------    Margenes    -----------------
+
+    margin = establece el margen para los cuatro lados.
+    Ejemplo 1:
+
+    margin: 10px 5px 3rem 9px;
+
+    el 1 valor (10px), define el margen sup (margin-top: 10px)
+    el 2 valor (5px), define el margen derecho. (margin-right: 5px)
+    el 3 valor (3rem), define el margen inferior. (margin-bottom: 3rem;
+    el 4 valor (9px), define el margen izquierdo (margin-left: 9px)
+
+    --
+    Ejemplo 2:
+
+    margin: 5px 10 px
+
+    el 1 valor (5 xp), define el margen superior e inferior.
+    el 2 valor (10px), define el margen derecho e izquierdo.
+
+    margin: auto;
+
+    el valor (auto) centra los elementos.
+    si solo hay 1 valor, ese valor sera igual para todos los margenes, en este caso,
+    el auto centrara los elementos en todas las direcciones.
+    
+/** RECORDAR: 
+    Este tipo de formato ( sentido de reloj) aplica para todo tipo de propiedades,
+    por ejemplo el padding, border, entre otros.
+    --
+    Ejemplo 3:
+
+    margin: inherit;
+
+    hereda el margen de la clase padre.
+
+    --
+    Margin Collapse : 
+    
+    es cuando 2 margenes se sobreponen entre si
+    (se debe evitar). puede ocurrir cuando los margenes son distintos 
+    (esto es por que los margenes no se suman). 
+    Se toma en consideración el margen mas grande 
+    (el navegador lo  hace de manera automática).
+
+
+/**     ---------------  Padding  -----------------------
+
+    padding = es el espacio entre el contenido y el borde de un elemento.
+    Ejemplo 1:
+
+    padding: 1em;     Aplica a los cuatro lados 
+
+    padding: 5% 10%;     arriba y abajo | izquierda y derecha 
+
+    padding: 1em 2em 2em;    arriba | izquierda y derecha | abajo 
+
+    padding: 5px 1em 0 2em;    arriba | derecha | abajo | izquierda 
+
+
+/** ----------   OTRAS PROPIEDADES DE LOS CONTENEDORES   ---------------
+
+    outline: 5px outset #a8dadc;
+
+    Va entre el margen y el border, se muestra como parte del margen
+    (dependiendo del tamaño puede abarcar todo el margen).
+
+    outline-offset: 5px;
+
+    Separacion entre el outline y el border
+
+/** RECORDAR:
+    los outline-offset solo puede tener 1 valor (no puede ser personalizado).
+    
+/** box-sizing: border-box;
+
+    Es para establecer un ancho fijo en nuestro contenido
+    (El contenido incluye las dimensiones del pading)
+    
+    
+/** -------------- Display ----------------------
+
+    Display: inline;
+
+    Significa que el elemento se 
+    posicionará a la derecha una vez que 
+    haya tomado el espacio que requiere
+
+    Display : block;
+
+    Significa que el elemento se colocará 
+    uno debajo del otro sin importar su 
+    tamaño o contenido…
+
+/** ----------------- FLEXBOX ----------------------
+  
+
+    display: flex;
+      
+    Necesario para hacer un flexbox
+    Halilita flexbox en el elemento.
+    Se debe habilitar en el elemento padre del que queremos modificar.
+
+    flex: propiedad que indica que el elemento
+    (en este caso y generalmente, el contenedor div)
+    sera flexible y se adapataran al entorno ( se acomodaran 
+    por default de manera horizontal (misma linea)  y hacia la 
+    izquierda)
+
+    flex:-direction: row ( en horizontal (por defecto))
+
+    flex:-direction: row-reverse ( en horizontal (por defecto)
+                    en orden inverso)
+
+    flex-direction: column (muestra los elementos (contenedores)
+                    de manera vertical, en el orden que aparecen)
+
+    flex-direction: column-reverse (muestra los elementos (contenedores)
+                    de manera vertical , en orden inverso.)
+  
+    flex-wrap = especifica si los elementos hijos son obligados a
+    permanecer en una misma fila (horizontal), o si siguen en
+    otras lineas (pasan a la sgte linea en horizontal, curso normal),
+    
+    flex-wrap: nowrap (no bajan a la siguiente fila, quedan todas en 
+    la misma fila)
+
+    flex-wrap:  wrap (envolver)(bajan a la sgte fila, estando envuelto
+                dentro de la clase padre (contenedor)
+  
+
+    *IMPORTANTE* :
+        al ser flex-wrap: wrap, se acomodan los elementos
+        al tamaño de la ventana
+                       
+
+
+    flex-flow: = es la forma correcta de escribir los elmentos flex,
+                 en el siguiente orden (por ejemplo):      
+           
+    1)flex-direction: row
+    2)flex-wrap: wrap
+
+    seria:
+
+    flex-flow: row wrap;
+
+    /** IMPORTANTE: 
+    Flex se puede itulizar con justify- content (horizontal), y align-items (vertical) 
+    para definir los espacios y las ubicaciones de los elementos (tambien debe ir en
+    la clase padre, al igual que el dispay: flex
+
+/**IMPORTANTE:
+
+    *justify-content = se aplica en las filas (rows)
+    *align-items = se aplica en las columnas (columns)
+
+
+    justify-content = orientación del texto
+
+    justify-content: center; (Centra los elementos dentro de un div)
+    
+    justify-content: flex-end; ( carga elementos hacia la derecha)
+    
+    justify-content: flex-between; (carga los elementos hacia los extremos,
+                                    dejando mucho espacio entre ellos)
+
+    justify-content: space-around; (deja mucho espacio entre los elementos,
+                                    pero ninguno se pocisiona en los extremos)
+                           
+    justify-content: space-evenly; (deja el mismo espacio de los elementos,
+                                    entre ellos y con los extremos del contenedor (div))     
+        
+
+
+    align-items = alineación de los elementos (de forma horizontal)
+       
+    align-items: flex-start; (se alinea hacia la parte superior)
+        
+    align-items: center; (alinea hacia el centro)
+
+    align-items: flex-end; (se alinea hacia la parte inferior)
+
+    align-items: strech; (default) ( se alargan los elementos)
+
+    align-items: baseline; (saca un promedio del alto de todos los elementos, 
+                            y los pone en una misma linea, esto se usa cuando
+                            los elementos son de distinto tamaño)
+
+    align-content = alineación de los elementos (de forma vertical)
+
+    align-content: flex-start; (alinea hacia la parte superior)
+
+    align-content: center (alinea hacia el centro)
+
+    align-content: flex-end; (alinea hacia la parte inferior)
+
+    align-content:  space-around (deja mucho espacio entre los elementos,
+                    pero ninguno se pocisiona en los extremos)
+
+    align-content: space-between;   (carga los elementos hacia los extremos,
+                                    dejando mucho espacio entre ellos)
+                                                 
+*/
+
+
+/**--------------  FORMAS DE ESCRIBIR CSS-----------------
+
+/** -- BEM (Bloques, Elementos, Modificadores)
+    Ejemplo usando BEM:
+
+    .card {}
+    .card__titulo {}
+    .card__imagen{}
+    .card__boton {}
+    .card__botton--activo {}
+
+/** -- Utility First
+    generalmente 1 sola propiedad (en general) por clase. Muho codigo, pero muy util.
+    Ejemplo usando Utility First:
+
+    .text-center{}
+    .color-red-100 {}
+    .bg-blue-200 {}
+    .p-2 {}
+    .m-2{}
+
+/** -- Módulos 
+    1º Defnides el contenido principal (clase padre), y luego vas especificando cada 
+    etiqueta de la clase padre.
+    Ejemplo usando Módulos:
+
+    .card {}
+    .card h2 {}
+    .card img {}
+    .card a {}
+
+/** SE PUEDEN COMBINAR DEPENDIENDO DEL PROYECYO (hay proyectos que mezclan los 3 enfoques)
+
+/** -----------------  PSEUDO CLASES   -----------------
+
+/** :hover 
+        Los cambios aparecen cuando el cursor esta encima del elemento.
+    Ejemplo 1:
+
+    a:hover {
+        color: green;
+    }
+
+    
+/** :visited
+        Los cambios aparecen cuando el cursor esta encima del elemento.
+    Ejemplo 2:
+
+    a:visited { 
+        color: orange;
+    }
+
+/** :focus
+        Representa un elemento (como una entrada de formulario) que ha sido enfocado.
+        Generalmente se activa cuando el usuario hace clic, toca un elemento
+        o lo selecciona con la tecla "Tab" del teclado.
+
+    input:focus {
+        color: red;
+    }
+    
+/** -------------   PSEUDO ELEMENTOS   ----------------
+
+/** ::after 
+    
+    Es comunmente usado para añadir contenido cosmético a un elemento con la 
+    propiedad content. Se añade al final de la clase
+
+    a::after {
+        content: "→";
+    }
+
+/** ::before 
+    Es usado normalmente para añadir contenido estético a un elemento,
+     usando la propiedad content. Se añade antes de la clase
+    
+    a::before {
+        content: "♥";
+    }
+
+
+
+/** ------------  Normalizar CSS  --------------------
+
+    1- Crear un archivo css 
+    2- Copiar el codigo de normalize.css y pegar en el nuevo archivo
+    3- crear un link en el HTML, agregando el CSS nuevo, y poniendolo al principio
+
+/**
+
+/** --------------------- Responsive Web Design ----------------------------
+
+    Es un enfoque, el cual nos dice que nuestros diseños deben adaptarse a las 
+    interacciones del usuario y a la resolución que utilicen.
+
+    Los sitios web deben adaptarse a celulares, tablets, laptops, computadoras, tv.
+
+    Se utilizan Media Queries para que el sitio sea responsive
+
+/** -- Media Queries
+
+    Es Una media query es una regla o conjunto de reglas CSS que se ejecutan para unas
+     condiciones específicas de la pantalla (tamaño, resolución, orientación, etc.)
+    
+     Ejemplo 1:
+
+     @media (min-width: 480px) {
+        h1{
+
+        }
+     
+/** IMPORTANTE: 
+        se recomienda usar user Snippets para la creacion de media queries mas rapida.
+
+
+
+/** ----  Snippets (user Snippets)  ----
+
+    Fragmento de codigo que puedes reutilizar en cualquier lugar que necesites
+
+**   Control + Shift + P    
+
+    comando para crear snippets en cualquier lenguaje dentro de VSC
+
+    en este caso es css.json (CSS) o css (CSS)
+    Ejemplo:
+
+    "Crear un Media Querie": {
+	    "prefix": "mq", //Abreviación de Media Querie
+		"body": "@media (min-width: $1) {\n    $2\n}"	//$ = donde a a ponerse el cursor
+	}
+
+/** ----------  IMAGENES DE FONDO   ----
+
+    background-color: dodgerblue;    Color de fondo
+    background-image: url("../img/fondo.png");   Poner una imagen de fondo
+    background-repeat: repeat-x;    repite solo en el eje X
+    background-position: center;    posicion de la imagen (centro)
+    background-size: cover;  ajusta el tamaño de la imagen para que cubra todo el espacio
+    
+    background-image: linear-gradient(to top, #dfe9f3 0%, var(--blanco));
+    gradiante lineal, de abajo hacia arriba.
+
+
+    background-attachment: scroll 
+    la imagen de fondo no sigue al scroll (no se mantiene fija).si la imagen es mas
+    pequeña que el tamaño de la pagina, en algun momento el texto se saldra de la imagen.
+    
+    background-attachment: fixed
+    la imagen de fondo se mantiene fija (se mueve el texto). la imagen siempre estara atras
+    del texto
+
+    Siempre es recomendable poner un color de fondo similar al de 
+    la imagen
+
+/**     -- BOX MODEL  --
+
+    Width (ancho): Específica el ancho de un elemento.
+    Height (altura): Específica la altura de un elemento.
+    Padding (relleno): Específica la cantidad de espacio entre el área de contenido y
+    el borde.
+    Border (borde): Específica el grosor y el estilo del borde que rodea el área de contenido y
+    el padding.
+    Margin (margen): Específica la cantidad de espacio entre el borde y el borde exterior 
+    del elemento.
+
+
+/** IMPORTANTE : https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+    ESTE ES EL ENLACE PARA CREAR EL SNIPPET para trabajar de manera mas facil el box model
+
+    el codigo es el sgte:
+
+    html {
+        box-sizing: border-box;
+    }
+   
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
+
+/** ---- POSICIONANDO ELEMENTOS CON POSITION ABSOLUTE
+
+    la clase padre debe tener posicion relativa, para que el hijo pueda tener una
+    posicion absoluta
+
+    .clase-padre {
+        position: relative;
+    }
+
+    .clase-hija {
+        position: absolute
+    }
+
+    ** Posicion de elementos: 
+
+    Top: 0; parte Superior
+    Bottom: 0; parte inferior
+    right: 0; parte derecha
+    left: 0 ; parte izquierda
+
+    Ejemplos: 
+
+    .clase-hija {
+        position: absolute;
+        Top: 0;
+        Left: 0; 
+    }
+
+    Se posicionara en la parte superior izquierda
+    
+    .clase-hija {
+        position: absolute;
+        Top: 0; 
+        Bottom: 0; 
+        right: 0; 
+        left: 0 ; 
+    }
+
+    Tomara todo el tamaño del elemento, esto es lo mismo que decir::after
+
+    .clase-hija {
+        position: absolute;
+        width: 100%;
+        height; 100%;
+    }
+
+/** ------------------------------ CSS GRID -----------------------------------
+
+    CSS Grid te permite deifinir la ubicación y tamaño de los elementos
+    de tu diseño web
+
+    Diferencias con Flex box:
+
+    Flexbox : 
+
+    -El contenido crece automáticamente
+    -Tiene acceso a 1 sola Dimensión (ya sea como fila, o como columna)
+
+    CSS Grid::after
+
+    -El contenido se agrupo dentro de un área definída (similar a una tabla HTML)
+    -Tiene acceso a las 2 dimensiones (al mismo tiempo). Puedes definia el tamaño 
+    tanto en vertical como en horizontal.
+
+    **IMPORTANTE: 
+        Se puede utilizar ambos para un mismo diseño.
+
+    **
+
+    display: grid; // Habilita el grid 
+    column-gap: 5rem;  //Agrega una separación a las columnas
+
+    grid-template-columns: 300px 300px;     /* tamaño de las columnas
+    grid-template-rows: 200px 800px;    /*tamaño de las filas   
+
+    Forma simple (y común) de escribirlo: 
+
+    grid: 200px 800px / 300px 300 px    /* 1º va las columnas, luego las filas
+
+    Ejemplo con 3 columnas de igual tamaño, en 1 sola fila:
+
+        .servicios {
+            dislpay: grid;
+            grid-template-columns: 1fr 1fr 1fr;     /* divide la columna en 3 partes iguales (x sección)
+            grid-template-columns: 33.3% 33.3% 33.3%;
+            grid-template-columns: repeat(3, 1fr)   /* 1º la cantidad de veces que se repetira. 2º el tamaño
+        }
+
+      grid-template-columns: repeat(3, 1fr);  es la sintaxis mas común, pero todas sirven.
+
+      ------------
+
+    /** ¿Como seleccionamos un campo en especifico utilizando grid?
+
+        utilizando la pseudo-clase nth-child.
+
+        .clase:nth-child(1)  // el (nº entre parentesis, hace referencia al numero de aparicion de la 
+                                    clase en el HTML (utilizar firefox developer para ver mas detallado)
+
+        Ejemplo utilizando la clase campo-form::after
+
+        .campo-form:nth-child(3) {
+            grid-column: 1 / 3;  // Acomoda los elementos de la columna 1 a la 3, es decir, se mostrara
+                                 el campo 3 ( correo ) abarcando todo el espacio desde la columna 1 a 
+                                 la columna 3.
+
+        }
+
+        nth-child(nº) ajusta de manera mas simple las ubicaciones y tamaños de los campos especificos.
+
+        **EN RESUMEN: nth-child(nº) cambia el orden y tamaño que se muestra el HTML sin cambiarlo. **
+    --------------
+
+    ** -- ¿Cuando utilizar Flexbox? --
+
+    Lo usaremos cuando queramos alinear o distribuir los elementos que estaran dentro de los contenedores
+
+    Por ejemplo: una barra de navegacion.
+
+    ** -- ¿Cuando utilizar CSS Grid? --
+
+    Lo usaremos cuando queramos definir el Layout de tu sitio web, como pueden ser las columnas o 
+    conetenedores de elementos.
+
+    Por ejemplo: cuando tengas un diseño en el cual tengas que distribuir distintas areas y/o tamaños
+
+    **EN RESUMEN: 
+        Distribuir elementos dentro de un contenedor = Flexbox
+
+        Crear el layout = CSS GRID        
+
+    ** -- ¿Cuando utilizar Floats? --
+
+    Nunca.
+
+    /** --- FUNCION width:min (valor1, valor2);
+
+        width: min(valor_1, valor_2) // Utiliza el valor mas pequeño
+
+        se debe utilizar como una funcion. se definen 2 valores (puede ser numerico,
+        porcentaje, etc), y el valor que sea mas pequeño sera el que se aplique en
+        el servidor.
+
+        Por ejemplo
+
+        width: min(60rem, 100%)
+
+        si estamos viendo la pagina desde un celular, el tamaño app del dispositivo
+        puede ser de unos 480px (48rem), ese equivaldria al 100%, en ese caso,
+        como 48rem es mas pequeño que 60rem, se le aplicara como valor el 100%
+
+        en caso contrario, si estams en un dispositivo donde el 100% es mas grande
+        que 60rem, se ulitizara como limite el mas pequeño ( en este caso, 60 rem).
+
+    -----------------------------------
+
+
+    /** ¿Cómo centrar los elementos?
+
+
+    centrando horizontalmente: 
+      
+        -se puede centrar con text-align: center; o con margin: 0 auto
+
+    *¿Cuando utilizar margin: 0 auto para centrar?
+
+        Se utiliza generalmente en los formularios.
+        Esto puede usarse siempre que:
+
+        1- Su padre no sea un display: flex;
+        2- Sea del tipo dislpay: block;
+
+    *¿Cuando utilizar text align para centrar?
+
+        Para los demas casos en que no se pueda utilizar margin: 0 auto;
+    
+    ----------------------------------
+
+/** --- ¿COMO TRABAJAR LOS INPUT DE LOS FORMULARIOS? ---
+
+    Forma 1 de trabjar los input:
+
+    .campo-form input {
+        background-color: red;  // selecciona todos los input 
+    }
+    
+    Forma 2 de trabajar los input:
+
+    .campo-form input[type="text"],
+    .campo-form input[type="number"] {
+        background-color: red;
+    }
+
+    Forma 3 de trabajar los input: 
+
+    .input-text {
+        background-color: red;
+    }
+
+     A diferencia de los otros 2, esta forma agregamos la clase directamente en el
+     HTML, esto es declarando la clase dentro del input.
+
+    */
+
+    /**RECORDAR: todos los input traen border.
+
+    para quitarselos, se debe utilizar: 
+
+    border: none;
+
+    ---------------------------
+
+    /**  ------------- SCROLL SNAP  --------
+
+    es para definir el movimiento del scroll, ya sea en el eje vertical (y) o 
+    el eje horizontal (x). Los valores pueden ser: 
+
+    none: Cuando se hace scroll en el contenedor, se ignoran los puntos de ajuste.
+
+    x: Los puntos de ajuste son horizontales.
+
+    y: Los puntos de ajuste son verticales.
+
+    both: Los puntos de ajuste son tanto horizontales como verticales.
+
+    /* Optional mandatory | proximity
+
+        scroll-snap-type: x mandatory;
+
+        Al terminar de hacer scroll, el scroll se mueve automáticamente SIEMPRE
+        al punto de ajuste que se haya determinado. Cuando se cambia el tamaño de 
+        la ventana, se cambia de orientación o se modifica el tamaño, SIEMPRE se 
+        moverá para satisfacer esto.
+        
+        
+        scroll-snap-type: y proximity;
+
+        Al terminar de hacer scroll, el scroll se mueve automáticamente SÓLO 
+        cuando el scroll esté muy próximo al punto de ajuste que se haya determinado. 
+        Cuando se cambia el tamaño de la ventana, se cambia de orientación o se 
+        modifica el tamaño, SÓLO se moverá si se encuentra muy cerca de satisfacer 
+        la premisa anterior.
+
+
+        scroll-snap-type: both mandatory;
+
+    /** IMPORTANTE: Se recomienda definir el scroll al inicio del css (etiqueta HTML)
+
+    */
+
+    /* scroll-snap-align
+
+        propiedad que se usa para indicar como se tiene que alinear cada elemento
+        en el viewport. Tambien acepta 2 valores (x) (y).
+
+        Si solo se utiliza 1 valor, ese valor correspondera para ambas direcciones
+        (similar a lo que ocurre con el padding o el margin). Los valores pueden ser:
+
+
+        none: La caja no tiene ningún punto de ajuste en su eje.
+
+        start: La caja tiene como punto de ajuste su inicio.
+
+        end: La caja tiene como punto de ajuste su final.
+
+        center: La caja tiene como punto de ajuste su centro.
+
+        ejemplo:
+
+        .servicios {
+            scroll-snap-align: center; // Se alineara el scroll en el centro
+        }
+        
+    */
+    /*    scroll-snap-stop
+
+        define las posiciones de ajuste ( donde se va a detener)
+
+        scroll-snap-stop: normal; //modo normal
+
+        scroll-snap-stop: always; //se detentra siempre donde lo indique el
+                                    scroll-sanp-align u otro parametro definido.
+
+        ejemplo combinando ambos tipos:
+
+        html {
+            scroll-snap-type: y mandatory;
+        }
+
+        .navegacion-principal,
+        .servicios,
+        .formulario {
+            scroll-snap-align: center;
+            scroll-snap-stop: always;
+        }
+
+        En resumen: se detendra el scroll cada vez que nos movamos en cada uno de las
+        clases indicadas, es decir, para pasar de navegación principal a formulario,
+        debo pasar si o si por servicios ( que esta entre medio de ambas clases)
+
+        /** IMPORTANTE: Siempre es recomendado definir el scroll.
+
+    /*
+
+
+/** --- Pagina para crear tus iconos ---
+
+        https://tablericons.com/
+
+        ------------------
+
+/** --- PAGINAS PARA AYUDAR A CREAR TU CSS ----
+
+    https://www.cssmatic.com/
+
+    te ayuda a crear:
+
+    -Gradient Generator
+    -Border Radius
+    -Noise Texture
+    -Box Shadow
+
+    Ejemplo utilizando cssmatic, para crear Box Shadow:
+
+    -webkit-box-shadow: 0px 5px 300px 0px rgba(189,183,189,0.46);
+    -moz-box-shadow: 0px 5px 300px 0px rgba(189,183,189,0.46);
+    box-shadow: 0px 5px 300px 0px rgba(189,183,189,0.46);
+
+    (Ver clase sombras)
+
+    ---------------------------------
+
+/** Pagina para ver que propiedades de CSS soporta cada navegador
+
+    https://caniuse.com/
+
+    ---------------------------------
+
+/**     Comentarios 
+
+    /* */  /* =  comentarios ^/
+   
+/*
+    para comentar el codigo en CSS utilizando atajos:
+
+    1º: solo una linea de codigo:
+        Contol + K (en la linea que quieres comentar), luego Control + C
+
+    2º: lineas de codigo:
+        Control + Shift + A
+
+*/
